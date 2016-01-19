@@ -1,4 +1,4 @@
-FROM adammay/dev_machine:latest
+FROM adammay/dev_machines_base:latest
 MAINTAINER Adam May <adammay@gmail.com>
 
 RUN apt-get update && \
