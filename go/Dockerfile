@@ -2,17 +2,18 @@ FROM adammay/dev_machines_base:latest
 MAINTAINER Adam May <adammay@gmail.com>
 
 # Which version? Defaults to go1.5.3
-ARG go_version=go1.5.3
+ENV go_version=go1.5.3
 
-# Change default server and install dependencies
-RUN apt-get update && \
-    apt-get install -y \
-            bison && \
-    rm -rf /var/lib/apt/lists/*
+ENV GOPATH /gocode
+ENV PATH $GOPATH/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
-RUN curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | zsh
+# go 1.3 tarball
+RUN wget -qO- http://golang.org/dl/$go_version.linux-amd64.tar.gz | tar -C /usr/local -xzf -
 
-RUN /bin/bash -c "source ~/.gvm/scripts/gvm && gvm install $go_version -B && gvm use $go_version"
+# GOPATH
+RUN mkdir -p $GOPATH
+RUN mkdir -p $GOPATH/bin
+RUN mkdir -p $GOPATH/pkg
+RUN mkdir -p $GOPATH/src
 
-CMD ["/bin/zsh"]
-
+WORKDIR $GOPATH/src
