@@ -9,11 +9,12 @@ RUN apt-get update && \
       python3-dev \
       python3-pip \
       python3-zmq \
+      sqlite \
       ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install ipython jupyter
+Run pip3 install ipython jupyter lxml sqlalchemy
 
 EXPOSE 8888
 
-CMD ["/usr/local/bin/ipython", "notebook", "--no-browser", "--ip='*'"]
+# CMD ["/usr/local/bin/jupyter", "notebook", "--no-browser", "--ip='*'"]
