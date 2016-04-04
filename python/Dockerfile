@@ -13,8 +13,7 @@ RUN apt-get update && \
       ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
-Run pip3 install ipython jupyter lxml sqlalchemy
+Run pip3 install ipython jupyter lxml sqlalchemy nose
 
+# Default port for ipython notebook
 EXPOSE 8888
-
-# CMD ["/usr/local/bin/jupyter", "notebook", "--no-browser", "--ip='*'"]
