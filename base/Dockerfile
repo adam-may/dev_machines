@@ -22,7 +22,7 @@ RUN sed -i "s/http:\/\/archive.ubuntu.com\/ubuntu\//http:\/\/mirror.internode.on
     rm -rf /var/lib/apt/lists/*
 
 # Add custom .gitignore
-RUN curl -o ~/.gitignore https://raw.githubusercontent.com/adam-may/dotfiles/master/git/.gitconfig
+RUN curl -o ~/.gitconfig https://raw.githubusercontent.com/adam-may/dotfiles/master/git/.gitconfig
 
 # Change the shell to using zsh
 RUN chsh -s /bin/zsh root
@@ -50,6 +50,9 @@ RUN curl -o ~/.vimrc.local https://raw.githubusercontent.com/adam-may/dotfiles/m
 # Setup spf13-vim
 RUN curl http://j.mp/spf13-vim3 -L -o - | sh
 RUN vim +BundleInstall +BundleClean +qall!
+
+# Create the directory for our SSH keys
+RUN mkdir /root/.ssh
 
 CMD ["/bin/zsh"]
 
