@@ -13,7 +13,7 @@ RUN apt-get update && \
       ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
-Run pip3 install ipython jupyter lxml sqlalchemy nose
+Run pip3 install ipython jupyter lxml sqlalchemy nose nose_parameterized
 
 # Default port for ipython notebook
 EXPOSE 8888
