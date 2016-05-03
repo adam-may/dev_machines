@@ -9,8 +9,7 @@ RUN apt-get update && \
       python3-dev \
       python3-pip \
       python3-zmq \
-      sqlite \
-      ca-certificates && \
+      sqlite && \
     rm -rf /var/lib/apt/lists/*
 
 Run pip3 install ipython jupyter lxml sqlalchemy nose nose_parameterized
