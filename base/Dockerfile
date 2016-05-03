@@ -1,4 +1,4 @@
-FROM buildpack-deps:xenial
+FROM buildpack-deps:xenial-curl
 MAINTAINER Adam May <adammay@gmail.com>
 
 RUN locale-gen en_AU.UTF-8
@@ -13,12 +13,10 @@ RUN sed -i "s/http:\/\/archive.ubuntu.com\/ubuntu\//http:\/\/mirror.internode.on
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
-            curl \
             git \
             man \
             tmux \
             vim-nox \
-            wget \
             zsh && \
     rm -rf /var/lib/apt/lists/*
 
