@@ -15,7 +15,7 @@ RUN apt-get update && \
       zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
 
-Run pip3 install ipython jupyter lxml sqlalchemy nose nose_parameterized
+Run pip3 install ipython jupyter lxml sqlalchemy nose nose_parameterized ipdb
 
 # Default port for ipython notebook
 EXPOSE 8888
