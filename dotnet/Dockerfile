@@ -1,7 +1,7 @@
 FROM adammay/dev_machines_base:latest
 MAINTAINER Adam May <adammay@gmail.com>
 
-ENV DNX_VERSION 1.0.0-rc1-final
+ENV DNX_VERSION 1.0.0-rc1-update2
 ENV DNX_USER_HOME /opt/DNX_BRANCH
 #Currently the CLR packages don't have runtime ids to handle debian:jessie but
 #we are making sure that the dependencies are the right versions and are opting for
