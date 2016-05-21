@@ -3,6 +3,7 @@ MAINTAINER Adam May <adammay@gmail.com>
 
 RUN apt-get update && \
     apt-get install -y \
+      libmysqlclient-dev \
       libxml2-dev \
       libxslt1-dev \
       libzmq5 \
@@ -15,7 +16,7 @@ RUN apt-get update && \
       zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
 
-Run pip3 install ipython jupyter lxml sqlalchemy nose nose_parameterized ipdb pandas numpy
+Run pip3 install ipython jupyter lxml sqlalchemy nose nose_parameterized ipdb pandas numpy mysqlclient
 
 # Default port for ipython notebook
 EXPOSE 8888
